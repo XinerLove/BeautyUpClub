@@ -34,23 +34,23 @@
     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
   </ol>
-  <div class="carousel-inner">
+  <div class="carousel-inner" >
     <div onclick="goToService('massage-services')" class="carousel-item active">
-      <img src="spa2.jpeg" class="d-block w-100" alt="...">
+      <img src="spa2.jpeg" style="height:850px;" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5 style = "color:red; font-size:40px;">Massage Services</h5>
         <p style ="color:red">"Get any Service related to Massage here you Want".</p>
       </div>
     </div>
     <div onclick="goToService('facial-services')"class="carousel-item">
-      <img src="spa3.jpeg" class="d-block w-100" alt="...">
+      <img src="spa3.jpeg" style="height:850px;" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5 style = "color:red; font-size:40px;">Facial Services</h5>
         <p style ="color:red">"Get any Service related to Facial here you Want"".</p>
       </div>
     </div>
     <div onclick="goToService('laser-services')"class="carousel-item">
-      <img src="spa1.jpeg" class="d-block w-100" alt="...">
+      <img src="spa1.jpeg" style="height:850px;" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5 style = "color:red; font-size:40px;">Laser Services</h5>
         <p style ="color:red; font-size: 18px;">"Get any service related to Laser you want".</p>
