@@ -23,30 +23,30 @@
 </head>
 <body background="login backaground.jpg">
 	<div align="center">
-		<h1 style="color:red;">Sign Up</h1>
-		<form action="<%=request.getContextPath()%>/account" method="post">
+		<h1 style="color:red;">Provide the following information to complete signup</h1>
+		<form action="<%=request.getContextPath()%>/account-details" method="post">
 			<table >
 				<tr>
-					  <th style="color:red; font-size:20pt;">First Name</th>
+					  <th style="color:red; font-size:20pt;">Street</th>
 					
-					<td><input type="text" name="fname" /></td>
+					<td><input type="text" name="street" /></td>
 					
-					  <th style="color:red; font-size:20pt;">Last Name</th>
+					  <th style="color:red; font-size:20pt;">City</th>
 					
-					<td><input type="text" name="lname" /></td>
+					<td><input type="text" name="city" /></td>
 					
 				</tr>
 				<tr>
-				  <th style="color:red; font-size:20pt;">Email</th>
-					<td><input type="text" name="email" /></td>
+				  <th style="color:red; font-size:20pt;">State</th>
+					<td><input type="text" name="state" /></td>
 				</tr>
 				<tr>
-				  <th style="color:red; font-size:20pt;">Password</th>
-					<td><input type="password" name="password" /></td>
+				  <th style="color:red; font-size:20pt;">Country</th>
+					<td><input type="text" name="country" /></td>
 				</tr>
 				<tr>
-				  <th style="color:red; font-size:20pt;">Confirm Password</th>
-					<td><input type="password" name="confirm_password" /></td>
+				  <th style="color:red; font-size:20pt;">Zip Code</th>
+					<td><input type="text" name="zip_code" /></td>
 					
 				</tr>
 				

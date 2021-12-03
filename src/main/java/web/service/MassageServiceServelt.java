@@ -32,5 +32,17 @@ public class MassageServiceServelt extends HttpServlet implements Servlet {
 			dispatcher.forward(request, response);
 			
 		}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws 
+	ServletException, IOException {
+		
+		List<Massage> allServices =   this.dao.getAllServices();
+		request.setAttribute("allServices", allServices);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("massage_services.jsp");
+			dispatcher.forward(request, response);
+			
+			
+		}
+	
+	
 }
 

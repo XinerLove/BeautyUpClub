@@ -50,9 +50,11 @@ import jakarta.servlet.ServletException;
 			 if(role == "customer") {
 				 System.out.println("CUSTOMER");
 				 session.setAttribute("auth", "pass");
+				 session.setAttribute("role", "customer");
 				 response.sendRedirect("customer-profile");
 			 }else if(role == "spaOwner") {
 				 session.setAttribute("auth", "pass");
+				 session.setAttribute("role", "seller");
 				 response.sendRedirect("profile");
 			 }else {
 				 

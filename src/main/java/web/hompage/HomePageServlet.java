@@ -12,7 +12,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-@WebServlet({"/index", "", "/"})
+@WebServlet("")
 public class HomePageServlet extends HttpServlet implements Servlet {
 	private SPADAO spaDao;
 	

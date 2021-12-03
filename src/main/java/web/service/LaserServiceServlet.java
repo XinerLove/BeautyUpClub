@@ -31,4 +31,15 @@ public class LaserServiceServlet extends HttpServlet implements Servlet {
 			dispatcher.forward(request, response);
 			
 		}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws 
+	ServletException, IOException {
+		List<Laser> allServices =   this.dao.getAllServices();
+		request.setAttribute("allServices", allServices);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("laser_services.jsp");
+			dispatcher.forward(request, response);
+			
+		}
+	
+	
 }

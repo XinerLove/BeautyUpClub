@@ -27,13 +27,13 @@
 </style>
 
 </head>
-<body>
+<body background="login backaground.jpg">
 <div align="center">
-		<h1>Add Service</h1>
+		<h1 style="color:red;">Add Service</h1>
 		<form action="<%=request.getContextPath()%>/addService" method="post">
 			<table >
 				<tr>
-					<td>Service: 
+					<td style= "color:red; font-size:20px;">Service: 
 					</td>
 					<td>
 						<select name="service">
@@ -45,11 +45,11 @@
 					
 				</tr>
 				<tr>
-					<td>Type: </td>
+					<td style= "color:red; font-size:20px;">Type: </td>
 					<td><input type="text" name="type" /></td>
 				</tr>
 				<tr>
-					<td>Price: </td>
+					<td style= "color:red; font-size:20px;">Price: </td>
 					<td><input type="text" name="price" /></td>
 				</tr>
 				<tr>
@@ -57,7 +57,8 @@
 				</tr>
 				<tr>
 					<td>  </td>
-					<td><input type="submit" value="Add Service"></td>
+					<td><input type="submit" value="Add Service" style ="background-color: #AED6F1 ; border: solid 1px #6E6E6E;
+				height:30px; front-size:20px; vertical-align:10px; color: #FF5733"></td>
 				</tr>	
 			</table>
 			

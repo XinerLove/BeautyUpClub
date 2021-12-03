@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer style="background: #e3f2fd;" class="page-footer font-small blue">
+<footer style="background: #e3f2fd; bottom:0; position: absolute; width: 100%;" class="page-footer font-small blue">
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2020 Copyright:

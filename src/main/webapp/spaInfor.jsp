@@ -1,9 +1,13 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+
 <title>SPA Infor</title>
 </head>
 <body background="img/login backaground.jpg">
@@ -22,6 +26,7 @@
 					<th>City: </th>
 					<td>
 						<select name="city">
+						  <option value="Marlboro">Marlboro</option>
 						  <option value="New York">New York</option>
 						  <option value="Los Angeles">Los Angeles</option>
 						  <option value="Chicago">Chicago</option>
@@ -33,6 +38,7 @@
 					<th>State: </th>
 					<td>
 						<select name="state">
+						  <option value="New Jersey">New Jersey</option>
 						  <option value="New York">New York</option>
 						  <option value="California">California</option>
 						  <option value="Illinois">Illinois</option>
@@ -47,16 +53,16 @@
 				<tr>
 				<th>Country: </th>
 				
-				<td><input type ="text" name ="country"  /><td>
+				<td><input type ="text" name="country"  /><td>
 				</tr>
 				
 				<tr>
 					<th>License Number: </th>
-					<td><input type="text" name="license" /></td>
+					<td><input type="text" name="spa_licenece" /></td>
 				</tr>
 				<tr>
 					<th>Phone Number: </th>
-				<td> <input type="text" name ="phone" /></td>
+				<td> <input type="text" name="spa_phone" /></td>
 				
 				
 				

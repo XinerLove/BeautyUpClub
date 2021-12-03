@@ -25,7 +25,10 @@ public class AccountServlet extends HttpServlet implements Servlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws 
 	ServletException, IOException {
 		//username change to email
+		
      String email = request.getParameter("email");
+	 String password = request.getParameter("password");
+	 
     //username change to email 
 	
 	if(accountDAO.emailExist(email))
@@ -36,42 +39,43 @@ public class AccountServlet extends HttpServlet implements Servlet{
 		
 }
 	else {
-		String password = request.getParameter("password");
 		if(password.equals(request.getParameter("confirm_password")))
 				{
+			
 					Account account =  new Account();
-					account.setCity(request.getParameter("city"));
-					account.setCountry(request.getParameter("country"));
+					account.setCity("Los Angles");
+					account.setCountry("USA");
 					account.setEmail(email);
 					account.setFname(request.getParameter("fname"));
 					account.setLname(request.getParameter("lname"));
 					
-					account.setState(request.getParameter("state"));
-					account.setStreet(request.getParameter("street"));
+					account.setState("WASHINGTON");
+					account.setStreet("ABC Street");
 					
 					//account.setUsername(username); change int to string for zip_code
-					account.setZip_code(request.getParameter("zip_code"));
-					account.setCountry(request.getParameter("country"));
-					
+					account.setZip_code("75001");
+//					
 					Role role = new Role();
 					String[]str = request.getParameter("type").split(" ");
 					role.setType(str[str.length-1]);
 					//change username to email
 					role.setEmail(email);
-					
+//					
 					UserLogin login = new UserLogin();
 					login.setEmail(email);
 					login.setPassword(password);
 					
+			
 					if(accountDAO.signUp(account, login, role))
-					{
-						
+					{	
+						request.setAttribute("email", email);
 						HttpSession session = request.getSession();
+						session.setAttribute("email",email);
 						session.setAttribute("accErrMessage", "");
 						if(role.getType().equals("Spa"))
 							response.sendRedirect("spaInfor.jsp");
 						else
-						response.sendRedirect("login.jsp");
+						response.sendRedirect("customer_details_form.jsp");
 					}
 					else
 					{

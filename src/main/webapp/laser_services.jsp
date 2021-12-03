@@ -22,10 +22,22 @@
 	.carousel {
     cursor: pointer;
 }
+.card {
+  border: 5px outset red;
+  background-color: mistyrose;
+  text-align: center;
+}
+
+h1 {
+  background-color: lightblue;
+}
 </style>
 
 </head>
 <body>
+<h1 style="color:red">Welcome Laser Services</h1>
+<div class="container">
+	<div class="row">
 <%
 		ArrayList<Laser> allServices = new ArrayList<Laser>();
 			allServices = (ArrayList<Laser>)request.getAttribute("allServices");
@@ -44,11 +56,17 @@
 		}else{
 			for(Laser service : allServices){
 				%>
-				<div class="col-sm-6">
-				    <div class="card">
+				<div class="col-sm-4">
+				    <div class="card" style="width:300px">
+				    <img class="card-img-bottom" src="beauty_spa.jpg" alt="Card imge">
 				      <div class="card-body">
-				        <h5 class="card-title"><% out.println(service.getType()); %></h5>
-				        <p class="card-text"><% out.println(service.getPrice()); %></p>
+				        <h5 class="card-title" style="color:red;"><b><% out.println(service.getSpa().getName()); %></b></h5>
+				        <p class="card-text">
+				      
+				        <% out.println("Phone: "+service.getSpa().getPhone()); %> <br>
+				        <% out.println("Type: "+service.getType()); %> <br>
+				        <% out.println("Price: $"+service.getPrice()); %>
+				        </p>
 				       
 				      </div>
 				    </div>
@@ -57,6 +75,10 @@
 			}
 		}
 	%>
+	</div>
+	
+</div>
+  
 </body>
  
 <%@ include file="footer.jsp"%>

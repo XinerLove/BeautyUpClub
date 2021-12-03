@@ -1,3 +1,6 @@
+<%@page import="bean.account.Account"%>
+<%@page import="bean.services.Massage"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -24,8 +27,20 @@
 
 </head>
 <body>
-
 <h1>Customer Profile Page</h1>
+<div class="container">
+	<div class="row">
+		<h1>Welcome <% out.println(request.getAttribute("fname").toString()); %> <% out.println(request.getAttribute("lname").toString()); %> </h1>
+	</div>
+	<div class="row">
+		<div class="col-md-6"> <% out.println(request.getAttribute("email").toString()); %> </div>
+		<div class="col-md-6"> <% out.println(request.getAttribute("city").toString()); %> </div>
+		<div class="col-md-6"> <% out.println(request.getAttribute("state").toString()); %> </div>
+		<div class="col-md-6"> <% out.println(request.getAttribute("street").toString()); %> </div>
+		<div class="col-md-6"> <% out.println(request.getAttribute("country").toString()); %> </div>
+		<div class="col-md-6"> <% out.println(request.getAttribute("zipCode").toString()); %> </div>
+	</div>
+</div>
 </body>
  
 <%@ include file="footer.jsp"%>

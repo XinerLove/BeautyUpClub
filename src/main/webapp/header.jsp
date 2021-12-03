@@ -1,6 +1,3 @@
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="Database.DatabaseConnection"%>
-<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,30 +13,65 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="homePage.jsp"><img src="C:\Users\georg\eclipse-workspace2\BeautyUpClub\src\main\webapp\img\lastlogo.jpg" width="150" height="80" class="d-inline-block align-top" alt=""></a>
+    <a class="navbar-brand" href="<%=request.getContextPath()%>/"><img src="mylogo1.jpg" width="170" height="90" class="d-inline-block align-top" alt=""></a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="<%=request.getContextPath()%>/">Home <span class ="sr-only"> </span></a>
-       
+        <a class="nav-link" href="<%=request.getContextPath()%>/">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="<%=request.getContextPath()%>/spas">SPA Stores</a>
       </li>
-     
-    </ul>
-    <form id="searchForm" class="form-inline my-2 my-lg-0">
-   			<input class="form-control mr-sm-2" id="searchInput"  type="search" placeholder="Search" aria-label="Search">
-	       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       
-    </form>
-    <script>
-    	
+    </ul>
+    
+    
+    <form id="searchForm" class="form-inline my-2 my-lg-0">
+      <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" onClick="searchService()">Search</button>
+    </form> 
+    <form id="facialForm" method="get" action="<%=request.getContextPath()%>/facial-services"></form>
+    <form id="massageForm" method="get" action="<%=request.getContextPath()%>/massage-services"></form>
+    <form id="laserForm" method="post" action="<%=request.getContextPath()%>/laser-services"></form>
+    
+    <script type="text/javascript">
+    	function searchService(){
+    		switch ($("#search-input").val()) {
+    		  case 'facial':
+    			  $("form#facialForm").submit();
+    		    break;
+    		  case 'massage':
+    			  $("form#massageForm").submit();
+    			  break;
+    		  case 'laser':
+    			  $("form#laserForm").submit();
+    		    break;
+    		  default:
+    			  alert("No Service Found.");
+    			  window.location="http://localhost:8080/BeautyUpClub/laser-service";
+    		}
+    	}
     </script>
-   <div class="ml-2">
+    
+   <div class="ml-2" style="display: flex;">
      <% 
      HttpSession session2 = request.getSession();
       if(session2.getAttribute("auth") == "pass"){
     	  %>
+    	  <%if(session2.getAttribute("role") == "customer"){
+    		  %>
+    		  <form action="<%=request.getContextPath()%>/customer-profile" method="get">
+	        	<input type="submit" value="profile">
+          		</form>
+    		  <%
+    	  }else{
+    		  %>
+    		  <form action="<%=request.getContextPath()%>/profile" method="get">
+	        	<input type="submit" value="profile">
+          		</form>
+    		  <%
+    	  }
+    	  %>
+    	  
     	  <form action="<%=request.getContextPath()%>/gologout" method="get">
 	        	<input type="submit" value="Logout">
           </form>

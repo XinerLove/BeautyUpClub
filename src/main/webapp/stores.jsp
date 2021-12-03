@@ -2,7 +2,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,6 +27,7 @@
 </head>
 <body>
 <div class="container">
+
 <div class="row">
 	<%
 		ArrayList<SPA> spaList = new ArrayList<SPA>();
@@ -39,13 +39,14 @@
 			for(SPA spa : spaList){
 				%>
 				<div class="col-sm-6">
-				    <div class="card">
+				    <div class="card" style="background: red;">
+				      <img src="login backaground.jpg" class="card-img-top" alt="Logo for Store" width="5px">
 				      <div class="card-body">
-				        <h5 class="card-title"><% out.println(spa.getName()); %></h5>
-				        <p class="card-text"><% out.println(spa.getPhone()); %></p>
-				        <form action="<%=request.getContextPath()%>/singleSpa" method="get">
-				        	<input style="display:none;" type="number" name="id" value="<% out.println(spa.getId()); %>">
-				        	<input type="submit" value="Go to<% out.println(spa.getName()); %> Store">
+				        <h2 class="card-title"><% out.println(spa.getName()); %> <% out.println(spa.getId()); %> </h2>
+				        <p class="card-text"><% out.println(spa.getPhone()); %> </p>
+				        <form action="<%=request.getContextPath()%>/singleSpa" method="get">				  
+				        	<input style="display:none;" type="text" name="id" value="<% out.println(spa.getId()); %>"></input>
+				        	<input type="submit" value="Go to<% out.println(spa.getName()); %> Store"></input>
 				        </form>
 				      </div>
 				    </div>
@@ -55,7 +56,9 @@
 		}
 	%>
 	</div>
-	</div>
+	
+</div>
+
 </body>
  
 <%@ include file="footer.jsp"%>

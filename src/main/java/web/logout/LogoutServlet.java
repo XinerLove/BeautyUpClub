@@ -3,6 +3,7 @@ package web.logout;
 import java.io.IOException;
 
 import dao.logout.LogoutDAO;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -23,14 +24,10 @@ public class LogoutServlet extends HttpServlet {
 	ServletException, IOException {
 		System.out.println("LogoutServlet");
 		    HttpSession session = request.getSession();
-//		    boolean logoutBehavior = this.logout.logout(session.getAttribute("email").toString(), session.getAttribute("password").toString());
-		    
 		    	session.removeAttribute("auth");
 			    session.removeAttribute("email");
 			    session.removeAttribute("password");
-			    response.sendRedirect("");
-		    
-		    
-		   
+			    response.sendRedirect("index.jsp");
+		     
 		}
 }
