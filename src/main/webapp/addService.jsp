@@ -33,7 +33,7 @@
 		<form action="<%=request.getContextPath()%>/addService" method="post">
 			<table >
 				<tr>
-					<td style= "color:red; font-size:20px;">Service: 
+					<td style= "color:red; font-size:30px;">Service: 
 					</td>
 					<td>
 						<select name="service">
@@ -45,11 +45,11 @@
 					
 				</tr>
 				<tr>
-					<td style= "color:red; font-size:20px;">Type: </td>
+					<td style= "color:red; font-size:30px;">Type: </td>
 					<td><input type="text" name="type" /></td>
 				</tr>
 				<tr>
-					<td style= "color:red; font-size:20px;">Price: </td>
+					<td style= "color:red; font-size:30px;">Price: </td>
 					<td><input type="text" name="price" /></td>
 				</tr>
 				<tr>
