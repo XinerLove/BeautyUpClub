@@ -23,22 +23,33 @@
 	.carousel {
     cursor: pointer;
 }
+h1 { font-size: 3.3em;
+  background-color: lightblue;
+}
+h2{ display: block;
+  font-size: 1.8em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
 </style>
 
 </head>
-<body>
-<h1>Customer Profile Page</h1>
-<div class="container">
+<body style="background-color:powderblue;">
+<h1 style="color:red; text-align:center;">Customer Profile</h1>
+<div class="container" style="margin-top:20px; backround-color: lightblue;">
 	<div class="row">
-		<h1>Welcome <% out.println(request.getAttribute("fname").toString()); %> <% out.println(request.getAttribute("lname").toString()); %> </h1>
+		<h2 style="color:red;">Welcome <% out.println(request.getAttribute("fname").toString()); %> <% out.println(request.getAttribute("lname").toString()); %> </h2>
 	</div>
 	<div class="row">
-		<div class="col-md-6"> <% out.println(request.getAttribute("email").toString()); %> </div>
-		<div class="col-md-6"> <% out.println(request.getAttribute("city").toString()); %> </div>
-		<div class="col-md-6"> <% out.println(request.getAttribute("state").toString()); %> </div>
-		<div class="col-md-6"> <% out.println(request.getAttribute("street").toString()); %> </div>
-		<div class="col-md-6"> <% out.println(request.getAttribute("country").toString()); %> </div>
-		<div class="col-md-6"> <% out.println(request.getAttribute("zipCode").toString()); %> </div>
+		<div class="col-md-6" style="color:black;"><h2> Email: <% out.println(request.getAttribute("email").toString()); %></h2> </div>
+		<div class="col-md-6" style="color:black;"><h2> City:  <% out.println(request.getAttribute("city").toString()); %></h2></div>
+		<div class="col-md-6" style="color:black;"><h2> State: <% out.println(request.getAttribute("state").toString()); %></h2></div>
+		<div class="col-md-6" style="color:black;"><h2> Street: <% out.println(request.getAttribute("street").toString()); %></h2></div>
+		<div class="col-md-6" style="color:black;"><h2> Country: <% out.println(request.getAttribute("country").toString()); %></h2> </div>
+		<div class="col-md-6" style="color:black;"><h2> Zip_Code: <% out.println(request.getAttribute("zipCode").toString()); %></h2></div>
 	</div>
 </div>
 </body>

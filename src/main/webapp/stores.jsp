@@ -25,7 +25,7 @@
 </style>
 
 </head>
-<body>
+<body style="background-color:powderblue;">
 <div class="container">
 
 <div class="row">
