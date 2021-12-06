@@ -24,30 +24,37 @@
 	.carousel {
     cursor: pointer;
 }
+h3{ font-size: 1.9em;
+
+color: red;}
 .card {
-	background-color: #cce0e9 !important;
+	background-color: lightblue; !important;
 }
 
 </style>
 
 </head>
-<body>
+<body style="background-color:powderblue;">
 
-	<div class="container">
-		<div clas="row">
-			<div class="col-md-12" style="text-align:center;"><h1><% out.println(request.getAttribute("name"));%></h1></div>
-			<div clas="col-md-12" style="text-align:right;"><a href="addService.jsp" class="btn btn-primary">Add Services</a> </div>
+	<div class="container"  style="width:100%; height: 200px;">
+		<div class="row">
+			<div class="col-md-12" style="text-align:center;"><h1 style="color: red;"><% out.println(request.getAttribute("name")+" Store");%></h1></div>
+			<div class="col-md-12" style="text-align:right;"><a href="addService.jsp" class="btn btn-primary">Add Services</a> </div>
 		</div>
 		
 	
-		<div class="row">
-			<div class="col-md-4"><h3><% out.println("Email :"+request.getAttribute("email"));%></h3></div>
-			<div class="col-md-4"><h3><% out.println("Phone :"+request.getAttribute("phone"));%></h3></div>
-			<div class="col-md-4"><h3><% out.println("License :"+request.getAttribute("license"));%></h3></div>
+		<div class="row" >
+		    <div class="col-md-6"><h3>Contact Informations:</h3></div>
+		    <div class="col-md-6"><h3>Email: <%out.println(request.getAttribute("email"));%></h3></div>
+			<div class="col-md-6"><h3>Phone: <% out.println(request.getAttribute("phone"));%></h3></div>
+			<div class="col-md-6"><h3>License: <% out.println(request.getAttribute("license"));%></h3></div>
 		</div>
 		
 			<div class="row">
 			<div class="col-md-12" style="text-align:center;">
+			
+			
+			
 <h3>Massage Services</h3>
 </div>
 			</div>
