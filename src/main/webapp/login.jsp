@@ -21,7 +21,7 @@
     cursor: pointer;
 }
 </style>
-<body background="login backaground.jpg">
+<body background="login background.jpg">
 	<div align="center">
 	<h1 style="color:red">Welcome</h1>
 	
