@@ -80,4 +80,32 @@ public class MassageServiceDAO {
 	
 			return services;
 	}
+	
+	public Massage getSingleService(int id){
+		Massage service;
+		String SELECT_SERVICE = "SELECT * FROM massage WHERE id = ?";
+		PreparedStatement ps;
+		try {
+			
+			ps = con.prepareStatement(SELECT_SERVICE);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+		
+
+				int massage_id = rs.getInt("massage_id");
+				String type = rs.getString("type");
+				double price = Double.parseDouble(rs.getString("price"));
+				
+				 SPA spa =   this.spaDAO.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
+				
+				 service = new Massage(massage_id, price, type,spa);
+			
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			return null;
+		}
+	
+			return service;
+	}
 }

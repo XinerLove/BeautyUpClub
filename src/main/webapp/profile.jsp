@@ -81,8 +81,15 @@ color: red;}
 				<div class="col-sm-6">
 				    <div class="card">
 				      <div class="card-body">
-				        <h5 class="card-title"><% out.println(service.getType()); %></h5>
-				        <p class="card-text"><% out.println(service.getPrice()); %></p>
+				     	 <div>
+				     	 	<form action="<%=request.getContextPath()%>/edit-service" method="post">				  
+				        	<input style="display:none;" type="text" name="id" value="<% out.println((service.getId())); %>"></input>
+				        	<input style="display:none;" type="text" name="type" value="<% out.println("massage"); %>"></input>
+				        	<input type="submit" value="edit"></input>
+				        </form>
+				     	 </div>
+				        <h5 class="card-title"><% out.println(service.getType()); out.println(service.getId()); %></h5>
+				        <p class="card-text"><% out.println("$"+service.getPrice()); %></p>
 				       
 				      </div>
 				    </div>
@@ -123,7 +130,7 @@ color: red;}
 				    <div class="card">
 				      <div class="card-body">
 				        <h5 class="card-title"><% out.println(service.getType()); %></h5>
-				        <p class="card-text"><% out.println(service.getPrice()); %></p>
+				        <p class="card-text"><% out.println("$"+service.getPrice()); %></p>
 				       
 				      </div>
 				    </div>
@@ -161,7 +168,7 @@ laserServices = (ArrayList<Laser>)request.getAttribute("laserService");
 				    <div class="card">
 				      <div class="card-body">
 				        <h5 class="card-title"><% out.println(service.getType()); %></h5>
-				        <p class="card-text"><% out.println(service.getPrice()); %></p>
+				        <p class="card-text"><% out.println("$"+service.getPrice()); %></p>
 				       
 				      </div>
 				    </div>

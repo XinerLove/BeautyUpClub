@@ -9,7 +9,6 @@ import java.util.List;
 
 import Database.DatabaseConnection;
 import bean.services.Facial;
-import bean.services.Massage;
 import bean.spa.SPA;
 import dao.spa.SPADAO;
 
@@ -70,7 +69,7 @@ public class FacialServiceDAO {
 				
 				String type = rs.getString("type");
 				double price = Double.parseDouble(rs.getString("price"));
-				
+					System.out.print(rs.getString("spa_id"));
 				 SPA spa =   this.spaDao.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
 				
 				 services.add(new Facial(facial_id, price, type,spa));

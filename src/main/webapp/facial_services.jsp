@@ -65,7 +65,10 @@ h1 {
 				      <div class="card-body">
 				        <h5 class="card-title" style="color:red;"><b><% out.println(service.getSpa().getName()); %></b></h5>
 				        <p class="card-text">
-				      
+				      	<form action="<%=request.getContextPath()%>/singleSpa" method="get">				  
+				        	<input style="display:none;" type="text" name="id" value="<% out.println("13"); %>"></input>
+				        	<input type="submit" value="Go to<% out.println(service.getSpa().getId()); %> Store"></input>
+				        </form>
 				        <% out.println("Phone: "+service.getSpa().getPhone()); %> <br>
 				        <% out.println("Type: "+service.getType()); %> <br>
 				        <% out.println("Price: $"+service.getPrice()); %>

@@ -40,7 +40,7 @@ public class FacialServiceServlet extends HttpServlet implements Servlet {
 			List<Facial> allServices =   this.dao.getAllServices();
 		
 			request.setAttribute("allServices", allServices);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("facial_services.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("edit_services.jsp");
 			dispatcher.forward(request, response);
 
 			System.out.println("Path: "+dispatcher.toString());

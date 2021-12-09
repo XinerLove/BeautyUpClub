@@ -20,11 +20,7 @@
 	.carousel {
     cursor: pointer;
 }
-.background {
-  background-size:150px; width: 300px; height: 300px;
-  width: 200px,
-  height: 100px
-}
+
 </style>
 <body background="login background.jpg">
 	<div align="center">
