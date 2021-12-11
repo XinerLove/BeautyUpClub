@@ -35,10 +35,12 @@ h1 {
 .container{
 	padding-bottom: 5%;
 }
+
+
 </style>
 
 </head>
-<body>
+<body style="background-color:powderblue;">
 <h1 style="color:red">Welcome Facial Services</h1>
 <div class="container">
 	<div class="row">
@@ -71,7 +73,7 @@ h1 {
 				        <p class="card-text">
 				      	<form action="<%=request.getContextPath()%>/singleSpa" method="get">				  
 				        	<input style="display:none;" type="text" name="id" value="<% out.println(service.getSpa().getId()); %>"></input>
-				        	<input type="submit" value="Go to Store"></input>
+				        	<input style="color:red"; type="submit" value="Go to Store"></input>
 				        </form>
 				        <% out.println("Phone: "+service.getSpa().getPhone()); %> <br>
 				        <% out.println("Type: "+service.getType()); %> <br>

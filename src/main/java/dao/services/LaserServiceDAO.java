@@ -16,10 +16,15 @@ import dao.spa.SPADAO;
 
 public class LaserServiceDAO {
 
+	SPADAO spaDAO;
+	public LaserServiceDAO() {
+		this.spaDAO = new SPADAO();
+	}
+
 	static Connection con 
 	= DatabaseConnection.getConnection();
 	
-	SPADAO spaDao = new SPADAO();
+	//SPADAO spaDao = new SPADAO();
 	
 	public List<Laser> getAllServices(){
 		List<Laser> services = new ArrayList<>();
@@ -34,12 +39,13 @@ public class LaserServiceDAO {
 			while(rs.next())
 			{
 				int id = rs.getInt("laser_id");
-				
+				String type = rs.getString("type");
 				Double price = Double.parseDouble(rs.getString("price"));
 				
-				String type = rs.getString("type");
+				 SPA spa =   this.spaDAO.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
+	
 				
-				SPA spa = spaDao.getSPAByID(id);
+				//SPA spa = spaDao.getSPAByID(id);
 				
 				String image = rs.getString("image");
 				services.add(new Laser(id, price, type, image, spa));
@@ -70,7 +76,7 @@ public class LaserServiceDAO {
 				String type = rs.getString("type");
 				double price = Double.parseDouble(rs.getString("price"));
 				
-				 SPA spa =   this.spaDao.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
+				 SPA spa =   this.spaDAO.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
 				
 				 services.add(new Laser(laser_id, price, type,spa));
 			}
@@ -102,7 +108,7 @@ public Laser getSingleService(int id){
 //				System.out.print("Price"+rs.getString("price"));
 				double price = Double.parseDouble(rs.getString("price"));
 				
-				 SPA spa =   this.spaDao.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
+				 SPA spa =   this.spaDAO.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
 				
 				 service = new Laser(laser_id, price, type,spa);
 				 

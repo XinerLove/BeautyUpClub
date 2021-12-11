@@ -15,10 +15,15 @@ import dao.spa.SPADAO;
 
 public class FacialServiceDAO {
 
+	SPADAO spaDAO;
+	public FacialServiceDAO() {
+		this.spaDAO = new SPADAO();
+	}
+
 	static Connection con 
 	= DatabaseConnection.getConnection();
 	
-	SPADAO spaDao = new SPADAO();
+	//SPADAO spaDao = new SPADAO();
 	
 	public List<Facial> getAllServices(){
 		List<Facial> services = new ArrayList<>();
@@ -34,12 +39,13 @@ public class FacialServiceDAO {
 			{
 				int id = rs.getInt("Faical_id");
 								
-				
+				String type = rs.getString("type");
 				Double price = Double.parseDouble(rs.getString("price"));
 				
-				String type = rs.getString("type");
+
+				 SPA spa =   this.spaDAO.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
 				
-				SPA spa = spaDao.getSPAByID(id);
+				//SPA spa = spaDao.getSPAByID(id);
 				String image = rs.getString("image");
 				services.add(new Facial(id, price, type, image, spa));
 			}
@@ -66,12 +72,12 @@ public class FacialServiceDAO {
 	
 			while(rs.next())
 			{
-				int facial_id = rs.getInt("Faical_id");
-				
+				int facial_id = rs.getInt("Faical_id");	
 				String type = rs.getString("type");
 				double price = Double.parseDouble(rs.getString("price"));
-					System.out.print(rs.getString("spa_id"));
-				 SPA spa =   this.spaDao.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
+				
+					//System.out.print(rs.getString("spa_id"));
+				 SPA spa =   this.spaDAO.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
 				
 				 services.add(new Facial(facial_id, price, type,spa));
 			}
@@ -103,7 +109,7 @@ public Facial getSingleService(int id){
 //				System.out.print("Price"+rs.getString("price"));
 				double price = Double.parseDouble(rs.getString("price"));
 				
-				 SPA spa =   spaDao.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
+				 SPA spa =   spaDAO.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
 				
 				 service = new Facial(facial_id, price, type,spa);
 				 
