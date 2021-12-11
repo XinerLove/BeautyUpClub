@@ -7,6 +7,7 @@ public class Service {
 	private int id;
 	 private double price;
 	 private String type;
+	 private String image;
 	 private SPA spa;
 	 
 	public Service(double price, String type, SPA spa) {
@@ -22,6 +23,15 @@ public class Service {
 	this.id = id;
 		this.price = price;
 		this.type = type;
+		this.spa = spa;
+	}
+	
+	public Service( int id, double price, String type, String image, SPA spa) {
+		super();
+		this.id = id;
+		this.price = price;
+		this.type = type;
+		this.image = image;
 		this.spa = spa;
 	}
 
@@ -62,6 +72,14 @@ public class Service {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 	 
 	 

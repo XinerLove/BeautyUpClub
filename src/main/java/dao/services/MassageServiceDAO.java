@@ -40,8 +40,8 @@ public class MassageServiceDAO {
 				double price = Double.parseDouble(rs.getString("price"));
 				
 				 SPA spa =   this.spaDAO.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
-				
-				 services.add(new Massage(id, price, type,spa));
+				 String image = rs.getString("image");
+				 services.add(new Massage(id, price, type,image, spa));
 			}
 		
 		} catch (SQLException e) {
@@ -69,8 +69,8 @@ public class MassageServiceDAO {
 				double price = Double.parseDouble(rs.getString("price"));
 				
 				 SPA spa =   this.spaDAO.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
-				
-				 services.add(new Massage(massage_id, price, type,spa));
+				 
+				 services.add(new Massage(massage_id, price, type,  spa));
 			}
 		
 		} catch (SQLException e) {
@@ -81,31 +81,41 @@ public class MassageServiceDAO {
 			return services;
 	}
 	
+	
+	
 	public Massage getSingleService(int id){
+		
 		Massage service;
-		String SELECT_SERVICE = "SELECT * FROM massage WHERE id = ?";
+		
+		String SELECT_SERVICE_QUERY = "SELECT * FROM massage WHERE massage_id = ?";
 		PreparedStatement ps;
 		try {
 			
-			ps = con.prepareStatement(SELECT_SERVICE);
-			ps.setInt(1, id);
+			ps = con.prepareStatement(SELECT_SERVICE_QUERY);
+			ps.setInt(1,id);
+//			System.out.print("getSingleService");
 			ResultSet rs = ps.executeQuery();
-		
-
+			while(rs.next()) {
+//				System.out.print("NULL"+rs.getInt("massage_id"));
 				int massage_id = rs.getInt("massage_id");
 				String type = rs.getString("type");
+//				System.out.print("Price"+rs.getString("price"));
 				double price = Double.parseDouble(rs.getString("price"));
 				
 				 SPA spa =   this.spaDAO.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
 				
 				 service = new Massage(massage_id, price, type,spa);
-			
+				 
+				 return service;
+			}
+		
 		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			return null;
 		}
-	
-			return service;
+		return null;
 	}
+	
+	
 }

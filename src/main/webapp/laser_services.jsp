@@ -31,6 +31,9 @@
 h1 {
   background-color: lightblue;
 }
+.container{
+	padding-bottom: 5%;
+}
 </style>
 
 </head>
@@ -58,11 +61,15 @@ h1 {
 				%>
 				<div class="col-sm-4">
 				    <div class="card" style="width:300px">
-				    <img class="card-img-bottom" src="beauty_spa.jpg" alt="Card imge">
+				    <% String path = "https://cdn.pixabay.com/photo/"+service.getImage(); %>
+				    <img class="card-img-bottom" src="<% out.println(path); %>" alt="Card imge">
 				      <div class="card-body">
 				        <h5 class="card-title" style="color:red;"><b><% out.println(service.getSpa().getName()); %></b></h5>
 				        <p class="card-text">
-				      
+				      <form action="<%=request.getContextPath()%>/singleSpa" method="get">				  
+				        	<input style="display:none;" type="text" name="id" value="<% out.println(service.getSpa().getId()); %>"></input>
+				        	<input type="submit" value="Go to Store"></input>
+				        </form>
 				        <% out.println("Phone: "+service.getSpa().getPhone()); %> <br>
 				        <% out.println("Type: "+service.getType()); %> <br>
 				        <% out.println("Price: $"+service.getPrice()); %>

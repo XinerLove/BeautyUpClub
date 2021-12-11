@@ -30,6 +30,10 @@ color: red;}
 .card {
 	background-color: lightblue; !important;
 }
+.container{
+	padding-bottom: 65%;
+}
+
 
 </style>
 
@@ -43,12 +47,22 @@ color: red;}
 		</div>
 		
 	
-		<div class="row" >
-		    <div class="col-md-6"><h3>Contact Informations:</h3></div>
-		    <div class="col-md-6"><h3>Email: <%out.println(request.getAttribute("email"));%></h3></div>
-			<div class="col-md-6"><h3>Phone: <% out.println(request.getAttribute("phone"));%></h3></div>
-			<div class="col-md-6"><h3>License: <% out.println(request.getAttribute("license"));%></h3></div>
+		<div class="row" style="justify-content: center; text-align: center;">
+		
+		    <div class="col-md-8" >
+		    	<div class="card">
+				      <div class="card-body">
+				     	 
+				        <h5 class="card-title"><h3>Email: <% out.println(request.getAttribute("email"));%></h3></h5>
+				        <p class="card-text"><h3>Phone: <% out.println(request.getAttribute("phone"));%></h3></p>
+				        <p class="card-text"><h3>License: <% out.println(request.getAttribute("license"));%></h3></p>
+				       
+				      </div>
+				    </div>
+		    <h3></h3>
+		    </div>
 		</div>
+		<br />
 		
 			<div class="row">
 			<div class="col-md-12" style="text-align:center;">
@@ -82,13 +96,13 @@ color: red;}
 				    <div class="card">
 				      <div class="card-body">
 				     	 <div>
-				     	 	<form action="<%=request.getContextPath()%>/edit-service" method="post">				  
+				     	 	<form action="<%=request.getContextPath()%>/edit-service" method="get" style="float: right;">				  
 				        	<input style="display:none;" type="text" name="id" value="<% out.println((service.getId())); %>"></input>
 				        	<input style="display:none;" type="text" name="type" value="<% out.println("massage"); %>"></input>
 				        	<input type="submit" value="edit"></input>
-				        </form>
+				        	</form>
 				     	 </div>
-				        <h5 class="card-title"><% out.println(service.getType()); out.println(service.getId()); %></h5>
+				        <h5 class="card-title"><% out.println(service.getType());%></h5>
 				        <p class="card-text"><% out.println("$"+service.getPrice()); %></p>
 				       
 				      </div>
@@ -101,6 +115,7 @@ color: red;}
 		 		
 		 	</div>
 		 	
+		 	<br />
 			<div class="row">
 	<div class="col-md-12" style="text-align:center;">
 <h3>Facial Services</h3>
@@ -129,6 +144,13 @@ color: red;}
 				<div class="col-sm-6">
 				    <div class="card">
 				      <div class="card-body">
+				      	<div>
+				     	 	<form action="<%=request.getContextPath()%>/edit-service" method="get" style="float: right;">				  
+				        	<input style="display:none;" type="text" name="id" value="<% out.println((service.getId())); %>"></input>
+				        	<input style="display:none;" type="text" name="type" value="<% out.println("facial"); %>"></input>
+				        	<input type="submit" value="edit"></input>
+				        	</form>
+				     	 </div>
 				        <h5 class="card-title"><% out.println(service.getType()); %></h5>
 				        <p class="card-text"><% out.println("$"+service.getPrice()); %></p>
 				       
@@ -139,7 +161,9 @@ color: red;}
 			}
 		}
 %>
+
 </div>
+<br />
 <div class="row">
 	<div class="col-md-12" style="text-align:center;">
 <h3>Laser Services</h3>
@@ -167,6 +191,13 @@ laserServices = (ArrayList<Laser>)request.getAttribute("laserService");
 				<div class="col-sm-6">
 				    <div class="card">
 				      <div class="card-body">
+				      	<div>
+				     	 	<form action="<%=request.getContextPath()%>/edit-service" method="get" style="float: right;">				  
+				        	<input style="display:none;" type="text" name="id" value="<% out.println((service.getId())); %>"></input>
+				        	<input style="display:none;" type="text" name="type" value="<% out.println("laser"); %>"></input>
+				        	<input type="submit" value="edit"></input>
+				        	</form>
+				     	 </div>
 				        <h5 class="card-title"><% out.println(service.getType()); %></h5>
 				        <p class="card-text"><% out.println("$"+service.getPrice()); %></p>
 				       

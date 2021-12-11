@@ -35,6 +35,9 @@ h1 {
 }
 h2{ font color="red"
 }
+.container{
+	padding-bottom: 5%;
+}
 </style>
 
 </head>

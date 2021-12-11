@@ -10,6 +10,7 @@ import java.util.List;
 import Database.DatabaseConnection;
 import bean.services.Facial;
 import bean.services.Laser;
+import bean.services.Massage;
 import bean.spa.SPA;
 import dao.spa.SPADAO;
 
@@ -40,7 +41,8 @@ public class LaserServiceDAO {
 				
 				SPA spa = spaDao.getSPAByID(id);
 				
-				services.add(new Laser(id, price, type, spa));
+				String image = rs.getString("image");
+				services.add(new Laser(id, price, type, image, spa));
 			}
 		
 		} catch (SQLException e) {
@@ -80,4 +82,39 @@ public class LaserServiceDAO {
 	
 			return services;
 	}
+	
+public Laser getSingleService(int id){
+		
+		Laser service;
+		
+		String SELECT_SERVICE_QUERY = "SELECT * FROM laser WHERE laser_id = ?";
+		PreparedStatement ps;
+		try {
+			
+			ps = con.prepareStatement(SELECT_SERVICE_QUERY);
+			ps.setInt(1,id);
+//			System.out.print("getSingleService");
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+//				System.out.print("NULL"+rs.getInt("massage_id"));
+				int laser_id = rs.getInt("laser_id");
+				String type = rs.getString("type");
+//				System.out.print("Price"+rs.getString("price"));
+				double price = Double.parseDouble(rs.getString("price"));
+				
+				 SPA spa =   this.spaDao.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
+				
+				 service = new Laser(laser_id, price, type,spa);
+				 
+				 return service;
+			}
+		
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			return null;
+		}
+		return null;
+	}
+
 }

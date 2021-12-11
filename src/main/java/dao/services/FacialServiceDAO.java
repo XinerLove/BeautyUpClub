@@ -9,6 +9,7 @@ import java.util.List;
 
 import Database.DatabaseConnection;
 import bean.services.Facial;
+import bean.services.Massage;
 import bean.spa.SPA;
 import dao.spa.SPADAO;
 
@@ -39,8 +40,8 @@ public class FacialServiceDAO {
 				String type = rs.getString("type");
 				
 				SPA spa = spaDao.getSPAByID(id);
-				
-				services.add(new Facial(id, price, type, spa));
+				String image = rs.getString("image");
+				services.add(new Facial(id, price, type, image, spa));
 			}
 		
 		} catch (SQLException e) {
@@ -81,5 +82,39 @@ public class FacialServiceDAO {
 		}
 	
 			return services;
+	}
+	
+public Facial getSingleService(int id){
+		
+	Facial service;
+		
+		String SELECT_SERVICE_QUERY = "SELECT * FROM facial WHERE Faical_id = ?";
+		PreparedStatement ps;
+		try {
+			
+			ps = con.prepareStatement(SELECT_SERVICE_QUERY);
+			ps.setInt(1,id);
+//			System.out.print("getSingleService");
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+//				System.out.print("NULL"+rs.getInt("massage_id"));
+				int facial_id = rs.getInt("Faical_id");
+				String type = rs.getString("type");
+//				System.out.print("Price"+rs.getString("price"));
+				double price = Double.parseDouble(rs.getString("price"));
+				
+				 SPA spa =   spaDao.getSPAByID(Integer.parseInt(rs.getString("spa_id")));
+				
+				 service = new Facial(facial_id, price, type,spa);
+				 
+				 return service;
+			}
+		
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			return null;
+		}
+		return null;
 	}
 }

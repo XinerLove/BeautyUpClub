@@ -1,3 +1,4 @@
+<%@page import="bean.services.Massage"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="bean.spa.SPA"%>
 <%@page import="java.util.Random"%>
@@ -29,35 +30,39 @@
 </head>
 <body background="login backaground.jpg">
 <div align="center">
+		
 		<h1 style="color:red;">Edit Service</h1>
-		<form action="<%=request.getContextPath()%>/addService" method="post">
+		<form action="<%=request.getContextPath()%>/edit-service" method="post">
+		
+		<input type="text" name="id" value="<% out.println(request.getAttribute("id")); %>" style="display:none;" />
 			<table >
 				<tr>
 					<td style= "color:red; font-size:30px;">Service: 
 					</td>
 					<td>
 						<select name="service">
-						  <option value="laser">Laser</option>
-						  <option value="massage">Massage</option>
-						  <option value="facial">Facial</option>
+						
+						  <option value="laser" <% if(request.getAttribute("name") == "laser"){ %> selected<% } %>>Laser</option>
+						  <option value="massage" <% if(request.getAttribute("name") == "massage"){ %> selected<% } %>>Massage</option>
+						  <option value="facial" <% if(request.getAttribute("name") == "facial"){ %> selected<% } %>>Facial</option>
 						</select>
 					</td>
 					
 				</tr>
 				<tr>
 					<td style= "color:red; font-size:30px;">Type: </td>
-					<td><input type="text" name="type" /></td>
+					<td><input type="text" name="type" value="<% out.println(request.getAttribute("type")); %>" /></td>
 				</tr>
 				<tr>
 					<td style= "color:red; font-size:30px;">Price: </td>
-					<td><input type="text" name="price" /></td>
+					<td><input type="text" name="price" value="<% out.println(request.getAttribute("price").toString()); %>" /></td>
 				</tr>
 				<tr>
 					
 				</tr>
 				<tr>
 					<td>  </td>
-					<td><input type="submit" value="Edit Service" style ="background-color: #AED6F1 ; border: solid 1px #6E6E6E;
+					<td><input type="submit" value="Update Service" style ="background-color: #AED6F1 ; border: solid 1px #6E6E6E;
 				height:30px; front-size:20px; vertical-align:10px; color: #FF5733"></td>
 				</tr>	
 			</table>

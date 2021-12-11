@@ -12,4 +12,8 @@ public class Massage extends Service{
 		super( id, price, type, spa);
 		
 	}
+	public Massage( int id, double price, String type, String image, SPA spa) {
+		super( id, price, type, image, spa);
+		
+	}
 }

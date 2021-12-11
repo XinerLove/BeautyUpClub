@@ -128,6 +128,7 @@ public class SPADAO {
 			SPA spa = new SPA();
 			while(rs.next())
 			{
+				spa.setId(id);
 				spa.setName(rs.getString("spa_name"));
 				spa.setPhone(rs.getString("phone"));
 				spa.setLicense(rs.getString("license"));

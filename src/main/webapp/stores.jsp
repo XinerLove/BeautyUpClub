@@ -22,6 +22,9 @@
 	.carousel {
     cursor: pointer;
 }
+.container{
+	padding-bottom: 5%;
+}
 </style>
 
 </head>
@@ -42,7 +45,7 @@
 				    <div class="card" style="background: red;">
 				      <img src="login backaground.jpg" class="card-img-top" alt="Logo for Store" width="5px">
 				      <div class="card-body">
-				        <h2 class="card-title"><% out.println(spa.getName()); %> <% out.println(spa.getId()); %> </h2>
+				        <h2 class="card-title"><% out.println(spa.getName()); %> </h2>
 				        <p class="card-text"><% out.println(spa.getPhone()); %> </p>
 				        <form action="<%=request.getContextPath()%>/singleSpa" method="get">				  
 				        	<input style="display:none;" type="text" name="id" value="<% out.println(spa.getId()); %>"></input>
