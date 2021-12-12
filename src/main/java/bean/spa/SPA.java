@@ -8,7 +8,7 @@ public class SPA {
   private String phone;
   private String license;
   private Account seller;
-  
+  private String image;
   
 public SPA(int id,String name, String phone, String license, Account seller) {
 	this.id= id;
@@ -22,7 +22,24 @@ public SPA(int id,String name, String phone, String license, Account seller) {
 public SPA() {
 	// TODO Auto-generated constructor stub
 }
+public SPA(int id,String name, String phone, String license, Account seller, String image) {
+	this.id= id;
+	this.name = name;
+	this.phone = phone;
+	this.license = license;
+	this.seller = seller;
+    this.image = image;
+	
+}
 
+
+public String getImage() {
+	return image;
+}
+
+public void setImage(String image) {
+	this.image = image;
+}
 
 public int getId() {
 	return id;

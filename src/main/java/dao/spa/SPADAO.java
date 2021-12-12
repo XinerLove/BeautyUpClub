@@ -78,8 +78,8 @@ public class SPADAO {
 				String phone = rs.getString("phone");
 				String license = rs.getString("license");
 				Account email = account.getUser(rs.getString("email"));
-				
-				spas.add(new SPA(id, name, phone, license, email));
+				String image = rs.getString("image");
+				spas.add(new SPA(id, name, phone, license, email, image));
 			}
 		
 		} catch (SQLException e) {

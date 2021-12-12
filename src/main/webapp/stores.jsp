@@ -44,7 +44,9 @@
 				%>
 				<div class="col-sm-6">
 				    <div class="card" style="background: red;">
-				      <img src="login backaground.jpg" class="card-img-top" alt="Logo for Store" width="5px">
+				     <% String path = "https://cdn.pixabay.com/photo/"+spa.getImage(); %>
+				     <img class="card-img-bottom" src="<% out.println(path); %>" alt="Card imge">
+				    
 				      <div class="card-body">
 				        <h2 class="card-title"><% out.println(spa.getName()); %> </h2>
 				        <p class="card-text"><% out.println(spa.getPhone()); %> </p>
