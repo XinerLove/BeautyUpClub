@@ -52,7 +52,7 @@
 				        <p class="card-text"><% out.println(spa.getPhone()); %> </p>
 				        <form action="<%=request.getContextPath()%>/singleSpa" method="get">				  
 				        	<input style="display:none;" type="text" name="id" value="<% out.println(spa.getId()); %>"></input>
-				        	<input type="submit" value="Go to<% out.println(spa.getName()); %> Store"></input>
+				        	<input style = "color:red; background: pink"; type="submit" value="Go to <% out.println(spa.getName()); %> Store"></input>
 				        </form>
 				      </div>
 				    </div>

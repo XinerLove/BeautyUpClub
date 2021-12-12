@@ -73,7 +73,7 @@ h1 {
 				        <p class="card-text">
 				      	<form action="<%=request.getContextPath()%>/singleSpa" method="get">				  
 				        	<input style="display:none;" type="text" name="id" value="<% out.println(service.getSpa().getId()); %>"></input>
-				        	<input style="color:red"; type="submit" value="Go to Store"></input>
+				        	<input style="color:red; background: pink"; type="submit" value="Go to Store"></input>
 				        </form>
 				        <% out.println("Phone: "+service.getSpa().getPhone()); %> <br>
 				        <% out.println("Type: "+service.getType()); %> <br>
