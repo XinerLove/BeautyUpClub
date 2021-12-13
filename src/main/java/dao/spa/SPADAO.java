@@ -39,7 +39,7 @@ public class SPADAO {
 				ps.execute();
 				
 //				ps = con.prepareStatement(update_user_query);
-//				ps.setString(1, street);
+		
 //				ps.setString(2, city);
 //				ps.setString(3, state);
 //				ps.setString(4, country);

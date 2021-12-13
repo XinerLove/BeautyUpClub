@@ -54,7 +54,7 @@ public class ProfileServlet extends HttpServlet implements Servlet{
 			request.setAttribute("email", seller.getEmail());
 			request.setAttribute("phone", spa.getPhone());
 			request.setAttribute("license", spa.getLicense());
-			
+					
 			List<Massage> massageServices = massageDAO.getAllSPAServices(id);
 			request.setAttribute("massageServices", massageServices);
 			

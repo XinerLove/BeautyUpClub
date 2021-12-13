@@ -53,10 +53,10 @@ color: red;}
 		    	<div class="card">
 				      <div class="card-body">
 				     	 
-				        <h5 class="card-title"><h3>Email: <% out.println(request.getAttribute("email"));%></h3></h5>
+				        <h5 class="card-text"><h3>Email: <% out.println(request.getAttribute("email"));%></h3></h5>
 				        <p class="card-text"><h3>Phone: <% out.println(request.getAttribute("phone"));%></h3></p>
 				        <p class="card-text"><h3>License: <% out.println(request.getAttribute("license"));%></h3></p>
-				       
+				        
 				      </div>
 				    </div>
 		    <h3></h3>

@@ -33,7 +33,8 @@ background-size: cover;
 					  <th style="color:red; font-size:20pt;">First Name</th>
 					
 					<td><input type="text" name="fname" /></td>
-					
+					</tr>
+					<tr>
 					  <th style="color:red; font-size:20pt;">Last Name</th>
 					
 					<td><input type="text" name="lname" /></td>
@@ -59,8 +60,7 @@ background-size: cover;
 				<td>   </td>	
 				<th><input type="submit" size ="40" value="Sign Up as Spa" style ="background-color: #AED6F1 ; border: solid 1px #6E6E6E;
 				height:30px; front-size:20px; vertical-align:10px; color: #FF5733" name= "type"/></th>	
-				<th><input type="submit" size="40" value="Sign Up as customers"   size ="40" value="Sign Up as Spa" style ="background-color: #AED6F1 ; border: solid 1px #6E6E6E;
-				height:30px; front-size:20px; vertical-align:10px; color: #FF5733" name = "type"/></th>
+				
 				</tr>
 			</table>
 			

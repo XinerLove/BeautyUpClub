@@ -43,14 +43,14 @@ public class AccountServlet extends HttpServlet implements Servlet{
 				{
 			
 					Account account =  new Account();
-					account.setCity("Los Angles");
+					account.setCity(" ");
 					account.setCountry("USA");
 					account.setEmail(email);
 					account.setFname(request.getParameter("fname"));
 					account.setLname(request.getParameter("lname"));
 					
-					account.setState("WASHINGTON");
-					account.setStreet("ABC Street");
+					account.setState(" ");
+					account.setStreet(" ");
 					
 					//account.setUsername(username); change int to string for zip_code
 					account.setZip_code("75001");
