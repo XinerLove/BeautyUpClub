@@ -2,7 +2,8 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head style ="background-color:#33475b">
+<head>
+  
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 
@@ -10,7 +11,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
@@ -79,7 +80,7 @@
     	  <%
       }else{
     	  %>
-    	    <a class="btn btn-light" href="login.jsp">Login <span class="sr-only">(current)</span></a>
+    	    <a class="btn btn-light" href="login.jsp">SPA Login <span class="sr-only">(current)</span></a>
     		<a class="btn btn-secondary" href="Account.jsp">Signup <span class="sr-only">(current)</span></a>
     	  <%
       }

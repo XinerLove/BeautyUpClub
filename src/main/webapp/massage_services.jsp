@@ -61,6 +61,7 @@ h1 {
 				%>
 				<div class="col-sm-4">
 				    <div class="card" style="width:300px">
+				   
 				    <% String path = "https://cdn.pixabay.com/photo/"+service.getImage(); %>
 				    <img class="card-img-bottom" src="<% out.println(path); %>" alt="Card imge">
 				      <div class="card-body">

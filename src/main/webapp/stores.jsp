@@ -44,6 +44,7 @@
 				%>
 				<div class="col-sm-6">
 				    <div class="card" style="background: red;">
+				    
 				     <% String path = "https://cdn.pixabay.com/photo/"+spa.getImage(); %>
 				     <img class="card-img-bottom" src="<% out.println(path); %>" alt="Card imge">
 				    
