@@ -31,7 +31,7 @@ color: red;}
 	background-color: lightblue; !important;
 }
 .container{
-	padding-bottom: 65%;
+	padding-bottom: 80%;
 }
 
 

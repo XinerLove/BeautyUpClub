@@ -25,10 +25,13 @@
 	.carousel {
     cursor: pointer;
 }
+body{ background-repeat: no repeat;
+background-size: cover;
+}
 </style>
 
 </head>
-<body background="login backaground.jpg">
+<body background="cc1.png">
 <div align="center">
 		
 		<h1 style="color:red;">Edit Service</h1>
