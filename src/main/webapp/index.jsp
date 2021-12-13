@@ -24,6 +24,9 @@
 	.carousel {
     cursor: pointer;
 }
+.body{
+	padding-bottom: 125%;
+}
 </style>
 
 </head>
@@ -36,14 +39,14 @@
   </ol>
   <div class="carousel-inner" >
     <div onclick="goToService('massage-services')" class="carousel-item active">
-      <img src="spa2.jpeg" style="height:850px;" class="d-block w-100" alt="...">
+      <img src="spa2.jpeg" style="height:800px; width: 500px" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5 style = "color:red; font-size:40px;">Massage Services</h5>
         <p style ="color:red">"Get any Service related to Massage here you Want".</p>
       </div>
     </div>
     <div onclick="goToService('facial-services')"class="carousel-item">
-      <img src="spa3.jpeg" style="height:850px;" class="d-block w-100" alt="...">
+      <img src="spa3.jpeg" style="height:800px;" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5 style = "color:red; font-size:40px;">Facial Services</h5>
         <p style ="color:red">"Get any Service related to Facial here you Want"".</p>
