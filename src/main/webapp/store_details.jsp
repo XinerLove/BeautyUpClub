@@ -38,10 +38,16 @@ h2{ font color="red"
 .container{
 	padding-bottom: 5%;
 }
+body{ background-repeat: no repeat;
+background-size: cover;
+}
+.card {
+	background-color: lightblue; !important;
+}
 </style>
 
 </head>
-<body>
+<body background= "cc1.png">
 <div class="container" style="padding-block:10px;">
 	<div class="row">
 		<div class="col-lg-12" style="color:red; text-align:center;"><h1><b><% out.println(request.getAttribute("name")); %> Details Page</b></h1></div>
@@ -101,6 +107,7 @@ h2{ font color="red"
 		}
 	%>
 	</div>
+	<br>
 	
 	<div class="row">
 		<div class="col-lg-12" style="color:red; text-align:center;"><h1><b>Facial Services</b></h1></div>
@@ -136,7 +143,7 @@ h2{ font color="red"
 		}
 	%>
 	</div>
-	
+	<br>
 	<div class="row">
 		<div class="col-lg-12" style="color:red; text-align:center;"><h1><b>Laser Services</b></h1></div>
 		<%

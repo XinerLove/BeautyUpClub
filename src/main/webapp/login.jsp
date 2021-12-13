@@ -20,24 +20,27 @@
 	.carousel {
     cursor: pointer;
 }
+body{ background-repeat: no repeat;
+background-size: cover;
+}
+
 
 </style>
-<body background="login background.jpg">
+<body background="cc1.png">
 	<div align="center">
 	<h1 style="color:red">Welcome</h1>
 	
-		<h2><font face="Arial" size ="100px" color="red">Beauty Up Club</font></h2>
-		<form action="<%=request.getContextPath()%>/login" method="post">
+	<h2><font face="Arial" size ="100px" color="red">Beauty Up Club</font></h2>
+	
+	<form action="<%=request.getContextPath()%>/login" method="post">
 			<table >
 				<tr>
 					<th style="color:red; font-size:20pt;">Email</th>
-					<td><input type="text" name="email" size="30"/></td>
-					
+					<td><input type="text" name="email" size="30"/></td>				
 				</tr>
 				<tr>
 					<th style="color:red; font-size:20pt;">Password</th>
-					<td><input type="password" name="password" size="30" /></td>
-
+                    <td><input type="password" name="password" size="30" /></td>
 				</tr>
 
 			</table>
