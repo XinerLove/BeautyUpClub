@@ -62,13 +62,19 @@ background-size: cover;
 		<div class="col-lg-6"><h2>Zip_code: <% out.println(request.getAttribute("zipcode")); %> </h2></div>
 	</div>
 	<div class="row">
+		<div class="col-lg-6"><h2>Street: <% out.println(request.getAttribute("street")); %> </h2></div>
 		<div class="col-lg-6"><h2>City: <% out.println(request.getAttribute("city")); %> </h2></div>
+	</div>
+	
+	
+	<div class="row">
 		<div class="col-lg-6"><h2>State: <% out.println(request.getAttribute("state")); %> </h2></div>
+		<div class="col-lg-6"><h2>Country: <% out.println(request.getAttribute("country")); %> </h2></div>
 	</div>
 	
 	<div class="row">
 		<div class="col-lg-6"><h2>SPA Id: <% out.println(request.getAttribute("spa_id")); %> </h2></div>
-		<div class="col-lg-6"><h2>Country: <% out.println(request.getAttribute("country")); %> </h2></div>
+		
 	</div>
 
 </div>
