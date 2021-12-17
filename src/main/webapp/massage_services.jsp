@@ -63,7 +63,7 @@ h1 {
 				    <div class="card" style="width:300px">
 				   
 				    <% String path = "https://cdn.pixabay.com/photo/"+service.getImage(); %>
-				    <img class="card-img-bottom" src="<% out.println(path); %>" alt="Card imge">
+				    <img class="card-img-bottom" src="<% out.println(path); %>" style ="width: 290px; height: 200px;"  alt="Card imge">
 				      <div class="card-body">
 				        <h5 class="card-title" style="color:red;"><b><% out.println(service.getSpa().getName()); %></b></h5>
 				        <p class="card-text">
