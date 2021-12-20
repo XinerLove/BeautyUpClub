@@ -6,11 +6,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<style type="text/css">
+	.carousel {
+    cursor: pointer;
+}
+body{ background-repeat: no repeat;
+background-size: cover;
+}
+</style>
 
 
 <title>SPA Infor</title>
 </head>
-<body background="img/login backaground.jpg">
+<body background="cc1.png">
 	<div align="center">
 		<h1>Create SPA information</h1>
 		<form action="<%=request.getContextPath()%>/spaCreation" method="post">
@@ -23,6 +31,7 @@
 				<tr>
 					<th>Street: </th>
 					<td><input type="text" name="street" /></td>
+					<tr>
 					<th>City: </th>
 					<td>
 						<select name="city">
@@ -45,6 +54,7 @@
 						  <option value="Texas">Texas</option>
 						</select>
 					</td>
+					<tr>
 					<th>Zip code: </th>
 					<td>
 						<input type="text" name="zip_code"/>
